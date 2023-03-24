@@ -30,6 +30,7 @@ dependencies {
 	implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
 	implementation("org.keycloak:keycloak-admin-client:21.0.1")
 	implementation("org.keycloak:keycloak-core:21.0.1")
