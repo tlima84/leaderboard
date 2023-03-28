@@ -13,12 +13,15 @@ class RedisConfig {
 
     @Bean
     fun cacheManager(connectionFactory: RedisConnectionFactory): RedisCacheManager? {
+        //creates bean for redis cacheManager
         return RedisCacheManager.create(connectionFactory)
     }
 
     @Bean
     fun redisTemplate(connectionFactory: RedisConnectionFactory): RedisTemplate<String, Any> {
+        //instantiate a redis template to add a cache model
         val redisTemplate = RedisTemplate<String, Any>()
+        //sets connection factory into redisTemplate
         redisTemplate.setConnectionFactory(connectionFactory)
         return redisTemplate
     }

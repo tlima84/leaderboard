@@ -36,7 +36,6 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
-	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -46,13 +45,11 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
 	implementation("org.hibernate:hibernate-validator:8.0.0.Final")
-	implementation("org.keycloak:keycloak-admin-client:21.0.1")
-	implementation("org.keycloak:keycloak-core:21.0.1")
-	implementation("org.keycloak:keycloak-common:21.0.1")
-	implementation("org.keycloak:keycloak-authz-client:21.0.1")
 	implementation("org.jboss.resteasy:resteasy-client:6.2.3.Final")
 	implementation("org.jboss.resteasy:resteasy-jackson2-provider:6.2.3.Final")
 	implementation("javax.ws.rs:javax.ws.rs-api:2.1.1")
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.4")
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 
 	runtimeOnly("com.mysql:mysql-connector-j")
 	compileOnly("org.projectlombok:lombok")

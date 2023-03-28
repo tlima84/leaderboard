@@ -15,8 +15,10 @@ class Score(
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long = 0,
+    @Column(name = "name")
     var name: String,
-    var value: Long
+    @Column(name = "value")
+    var value: Int
 ): Serializable {
 
     @CreatedDate
