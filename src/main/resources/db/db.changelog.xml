@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+
+    <changeSet id="create_score_table" author="tlima84">
+        <createTable tableName="score">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="insert-scores" author="tlima84">
+        <comment>Insert scores</comment>
+        <sql>
+            INSERT INTO score (name, value, created_date) VALUES ('Harper', 20, CURRENT_TIMESTAMP);
+            INSERT INTO score (name, value, created_date) VALUES ('Liam', 25,  CURRENT_TIMESTAMP);
+            INSERT INTO score (name, value, created_date) VALUES ('Ava', 27, CURRENT_TIMESTAMP);
+            INSERT INTO score (name, value, created_date) VALUES ('Ethan', 155, CURRENT_TIMESTAMP);
+            INSERT INTO score (name, value, created_date) VALUES ('Olivia', 452, CURRENT_TIMESTAMP);
+            INSERT INTO score (name, value, created_date) VALUES ('Noah', 151, CURRENT_TIMESTAMP);
+            INSERT INTO score (name, value, created_date) VALUES ('Sophia', 231, CURRENT_TIMESTAMP);
+            INSERT INTO score (name, value, created_date) VALUES ('Jackson', 123, CURRENT_TIMESTAMP);
+            INSERT INTO score (name, value, created_date) VALUES ('Emma', 123, CURRENT_TIMESTAMP);
+            INSERT INTO score (name, value, created_date) VALUES ('Aiden', 111, CURRENT_TIMESTAMP);
+            INSERT INTO score (name, value, created_date) VALUES ('Charlotte', 18, CURRENT_TIMESTAMP);
+            INSERT INTO score (name, value, created_date) VALUES ('Mason', 18, CURRENT_TIMESTAMP);
+            INSERT INTO score (name, value, created_date) VALUES ('Amelia', 51, CURRENT_TIMESTAMP);
+            INSERT INTO score (name, value, created_date) VALUES ('Lucas', 15, CURRENT_TIMESTAMP);
+            INSERT INTO score (name, value, created_date) VALUES ('Isabella', 27, CURRENT_TIMESTAMP);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

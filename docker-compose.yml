@@ -1,34 +1,13 @@
 version: '3'
 
 services:
-  postgres:
-    image: postgres
-    environment:
-      POSTGRES_DB: keycloak
-      POSTGRES_USER: keycloak
-      POSTGRES_PASSWORD: password
-    ports:
-      - "5432:5432"
-  keycloak:
-    image: quay.io/keycloak/keycloak
-    environment:
-      DB_VENDOR: POSTGRES
-      DB_ADDR: postgres
-      DB_DATABASE: keycloak
-      DB_USER: keycloak
-      DB_SCHEMA: public
-      DB_PASSWORD: password
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: Pa55w0rd
-    ports:
-      - "9090:8080"
-    command: ["start-dev"]
-    depends_on:
-      - postgres
+
   redis:
     image: redis
     ports:
       - "6379:6379"
+    networks:
+      - local-net
   mysql:
     image: mysql
     ports:
@@ -36,3 +15,17 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=leaderboard
+    networks:
+      - local-net
+  app:
+    image: leaderboards
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      - local-net
+networks:
+  local-net:
+    driver: bridge

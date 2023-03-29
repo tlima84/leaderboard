@@ -21,7 +21,7 @@ allOpen {
 }
 
 group = "com.tlima84"
-version = "0.0.1-SNAPSHOT"
+version = "1.0.0-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 configurations {
@@ -50,6 +50,7 @@ dependencies {
 	implementation("javax.ws.rs:javax.ws.rs-api:2.1.1")
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.4")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	implementation("org.liquibase:liquibase-core:4.20.0")
 
 	runtimeOnly("com.mysql:mysql-connector-j")
 	compileOnly("org.projectlombok:lombok")

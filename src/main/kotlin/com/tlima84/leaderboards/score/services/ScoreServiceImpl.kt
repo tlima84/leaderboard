@@ -75,7 +75,7 @@ open class ScoreServiceImpl(private val scoreRepository: ScoreRepository, privat
     }
     override fun updateMonthlyScoreCache(month: Month) {
         //clear old cache
-        cacheManager.getCache("top10Monthly")?.clear()
+        cacheManager.getCache("top10Monthly"+month.name)?.clear()
         //get score by month
         this.getScoreByMonth(month)
     }
